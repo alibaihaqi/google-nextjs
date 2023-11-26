@@ -1,10 +1,11 @@
+import HomeContent from '@/components/Home/HomeContent'
 import HomeHeader from '@/components/Home/HomeHeader'
-import React from 'react'
 
 export default function Home() {
   return (
-    <>
+    <main className='flex flex-col min-h-[100svh]'>
       <HomeHeader />
-    </>
+      <HomeContent />
+    </main>
   )
 }
