@@ -4,24 +4,26 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-rgb: 255, 255, 255;
+  --s-button-hex: #f8f9fa;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-rgb: 32, 33, 36;
+    --s-button-hex: #303134;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(var(--background-rgb));
+  user-select: none;
+}
+
+@layer components {
+  .s-button {
+    @apply bg-[var(--s-button-hex)] px-5 py-3 rounded hover:ring-gray-200 focus:outline-none hover:shadow-md transition-shadow;
+  }
 }
