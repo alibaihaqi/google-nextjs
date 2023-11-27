@@ -17,13 +17,26 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
+  color: rgb(var(--foreground-rgb));
+  min-height: 100svh;
   user-select: none;
 }
 
 @layer components {
+  .s-form-search {
+    @apply flex items-center w-full my-5 mx-auto  px-5 py-3
+    border border-gray-200 rounded-full
+    max-w-[90%] sm:max-w-xl lg:max-w-2xl
+    focus-within:bg-[var(--s-button-hex)] hover:bg-[var(--s-button-hex)]
+    hover:shadow-md transition-shadow;
+  }
+
   .s-button {
-    @apply bg-[var(--s-button-hex)] px-5 py-3 rounded hover:ring-gray-200 focus:outline-none hover:shadow-md transition-shadow;
+    @apply bg-[var(--s-button-hex)] w-44 px-5 py-3 rounded-md border hover:ring-gray-200 focus:outline-none hover:shadow-md transition-shadow flex justify-center items-center;
+  }
+
+  .s-spinner {
+    fill: var(--foreground-rgb);
   }
 }
