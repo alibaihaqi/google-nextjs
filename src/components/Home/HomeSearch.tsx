@@ -1,14 +1,18 @@
 'use client'
 
+import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useState, ChangeEvent, MouseEvent } from 'react'
 
 import { AiOutlineSearch } from 'react-icons/ai'
 import { BsFillMicFill } from 'react-icons/bs'
 
+import { getGeneratedWord } from '@/utils/words'
+
 export default function HomeSearch() {
   const router = useRouter()
   const [input, setInput] = useState('')
+  const [isDisableButton, setIsDisableButton] = useState(false)
   
   const onChangeInputHandler = (event: ChangeEvent<HTMLInputElement>) => {
     setInput(event.target.value)
@@ -21,17 +25,19 @@ export default function HomeSearch() {
 
     router.push(`/search/web?searchTerm=${input}`)
   }
+
+  const onHandleRandomSearch = (event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault()
+    setIsDisableButton(true)
+
+    router.push(`/search/web?searchTerm=${getGeneratedWord}`)
+    setIsDisableButton(false)
+  }
   
   return (
     <>
       <form
-        className={
-          `flex items-center w-full my-5 mx-auto  px-5 py-3
-           border border-gray-200 rounded-full
-           max-w-[90%] sm:max-w-xl lg:max-w-2xl
-           focus-within:bg-[#303134] hover:bg-[#303134]
-           hover:shadow-md transition-shadow`
-        }
+        className={'s-form-search'}
         onSubmit={(event: ChangeEvent<HTMLFormElement>) => onSubmitFormHandler(event)}
       >
         <AiOutlineSearch className={'text-xl text-gray-500 mr-3'} />
@@ -56,8 +62,22 @@ export default function HomeSearch() {
           Google Search
         </button>
 
-        <button className='s-button'>
-          I&apos;m Feeling Lucky
+        <button
+          className='s-button'
+          disabled={isDisableButton}
+          onClick={onHandleRandomSearch}
+        >
+          {
+            isDisableButton ? (
+              <Image
+                alt='spinner'
+                className='s-spinner'
+                src={'/spinner.svg'}
+                height={24}
+                width={24}
+              />
+            ) : <span>I&apos;m Feeling Lucky</span>
+          }
         </button>
       </div>
     </>
