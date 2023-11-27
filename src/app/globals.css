@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
   --s-button-hex: #f8f9fa;
+  --s-footer-bg: #f2f2f2;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +14,7 @@
     --foreground-rgb: 255, 255, 255;
     --background-rgb: 32, 33, 36;
     --s-button-hex: #303134;
+    --s-footer-bg: #171717;
   }
 }
 
@@ -24,16 +26,24 @@ body {
 }
 
 @layer components {
+  .s-button {
+    @apply bg-[var(--s-button-hex)] w-44 px-5 py-3 rounded-md border hover:ring-gray-200 focus:outline-none hover:shadow-md transition-shadow flex justify-center items-center;
+  }
+
+  .s-footer {
+    @apply text-sm bg-[var(--s-footer-bg)] min-w-full;
+  }
+
+  .s-header-icon {
+    @apply bg-transparent hover:bg-gray-200 p-2 text-4xl rounded-full cursor-pointer;
+  }
+
   .s-form-search {
     @apply flex items-center w-full my-5 mx-auto  px-5 py-3
     border border-gray-200 rounded-full
     max-w-[90%] sm:max-w-xl lg:max-w-2xl
     focus-within:bg-[var(--s-button-hex)] hover:bg-[var(--s-button-hex)]
     hover:shadow-md transition-shadow;
-  }
-
-  .s-button {
-    @apply bg-[var(--s-button-hex)] w-44 px-5 py-3 rounded-md border hover:ring-gray-200 focus:outline-none hover:shadow-md transition-shadow flex justify-center items-center;
   }
 
   .s-spinner {
