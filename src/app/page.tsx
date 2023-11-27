@@ -2,7 +2,7 @@ import HomeContent from '@/components/Home/HomeContent'
 import HomeHeader from '@/components/Home/HomeHeader'
 import Footer from '@/components/Shared/Footer'
 
-import { getIpData } from '@/service/location'
+import { getIpData } from '@/services/location'
 
 export default async function Home() {
   const response = await getIpData()
