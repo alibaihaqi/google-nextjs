@@ -9,18 +9,15 @@ export default function Footer({ data }: IFooterProps) {
 
   return (
     <footer
-      className={`
-        absolute bottom-0 text-sm text-gray-500
-        bg-[#f2f2f2] min-w-full
-      `}
+      className={'s-footer'}
     >
-      <p className='px-8 py-3 border'>
+      <p className='px-8 py-3 border-b border-[#3c4043]'>
         { countryName }
       </p>
 
       <div
         className={`
-          flex flex-col sm:flex-row justify-between
+          flex flex-col sm:flex-row justify-around
           px-8 py-3 space-y-7s sm:space-y-0
         `
       }>
@@ -28,11 +25,14 @@ export default function Footer({ data }: IFooterProps) {
           return (
             <ul
               key={idx}
-              className='flex items-center space-x-6 py-2 sm:py-0'
+              className='flex flex-wrap justify-center items-center space-x-6 py-2 sm:py-0'
             >
               { info.map((data, dtidx) => {
                 return (
-                  <li key={dtidx}>
+                  <li
+                    key={dtidx}
+                    className='py-2 sm:py-0'
+                  >
                     { data.title }
                   </li>
                 )
