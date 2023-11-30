@@ -10,7 +10,7 @@ import { GOOGLE_LOGO } from '@/constants/logo'
 export default function HeaderSearch() {
   return (
     <header className='flex flex-col p-5 text-sm'>
-      <div className='flex items-center space-x-4'>
+      <div className='flex items-center justify-between space-x-4'>
         <Link href={'/'}>
           <Image
             alt={GOOGLE_LOGO.alt}
@@ -29,9 +29,10 @@ export default function HeaderSearch() {
           <RiSettings3Line className='s-header-icon' />
           <TbGridDots className='s-header-icon' />
         </div>
+
         <button
           className={`
-            bg-blue-500 text-white px-6 py-2 ml-2
+            hidden sm:inline-flex bg-blue-500 text-white px-6 py-2 ml-2
             font-medium rounded-md hover:brightness-105
             hover:shadow-md transition-all
           `}>
