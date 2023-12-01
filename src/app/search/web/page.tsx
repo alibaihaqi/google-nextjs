@@ -1,4 +1,5 @@
 import WebSearchAbout from '@/components/WebSearch/WebSearchAbout'
+import WebSearchItems from '@/components/WebSearch/WebSearchItems'
 import { GoogleCustomSearchApi } from '@/services/google/search'
 
 export default async function SearchWebPage(ctx: any) {
@@ -6,7 +7,9 @@ export default async function SearchWebPage(ctx: any) {
 
   return (
     <main className='flex flex-1 flex-col px-6'>
-      <WebSearchAbout searchInfo={getSearchData.searchInformation} />
+      <WebSearchAbout searchInfo={getSearchData?.searchInformation} />
+
+      <WebSearchItems items={getSearchData.items} />
     </main>
   )
 }
