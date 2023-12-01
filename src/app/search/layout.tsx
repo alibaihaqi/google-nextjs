@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '../globals.css'
 
-import HeaderSearch from '@/components/Search/HeaderSearch'
+import HeaderSearch from '@/components/HeaderSearch'
 import Footer from '@/components/Shared/Footer'
 import { getIpData } from '@/services/location'
 
