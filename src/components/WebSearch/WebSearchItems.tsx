@@ -26,17 +26,30 @@ export default function WebSearchItems({ items }: IWebSearchProps) {
 
     return items.map((item, idx: number) => {
       return (
-        <div key={idx}>
+        <div
+          key={idx}
+          className='flex flex-col space-y-1'
+        >
+          <p className='text-xs text-gray-400 text-ellipsis overflow-hidden'>
+            { item.formattedUrl }
+          </p>
+
           <Link href={item.link}>
-            <p>{ item.title }</p>
+            <p className='text-lg truncate text-blue-300 hover:underline'>
+              { item.title }
+            </p>
           </Link>
+
+          <p className='text-sm'>
+            { item.snippet }
+          </p>
         </div>
       )
     })
   }
 
   return (
-    <section className="flex flex-1 flex-col py-2">
+    <section className="flex flex-1 flex-col pt-4 pb-10 space-y-5 w-full sm:max-w-[75%]">
       { renderSearchItems() }
     </section>
   )
