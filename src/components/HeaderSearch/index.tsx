@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { RiSettings3Line } from 'react-icons/ri'
 import { TbGridDots } from 'react-icons/tb'
 
-import HeaderSearchBox from '@/components/Search/HeaderSearchBox'
-import HeaderSearchOptions from '@/components/Search/HeaderSearchOptions'
+import HeaderSearchBox from '@/components/HeaderSearch/HeaderSearchBox'
+import HeaderSearchOptions from '@/components/HeaderSearch/HeaderSearchOptions'
 import { GOOGLE_LOGO } from '@/constants/logo'
 
 export default function HeaderSearch() {

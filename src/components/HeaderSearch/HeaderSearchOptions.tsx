@@ -22,7 +22,7 @@ export default function HeaderSearchOptions() {
     <div
       className={`
         flex space-x-2 justify-center md:justify-start
-        pt-5 md:pl-52 border-b-[0.5px]
+        pt-5 md:pl-32 border-b-[0.5px]
       `}
     >
       { HEADER_OPTIONS.map((header) => {
