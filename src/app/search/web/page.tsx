@@ -6,7 +6,7 @@ export default async function SearchWebPage(ctx: any) {
   const getSearchData = await GoogleCustomSearchApi(ctx.searchParams?.searchTerm || '')
 
   return (
-    <main className='flex flex-1 flex-col px-6'>
+    <main className='flex flex-1 flex-col px-8'>
       <WebSearchAbout searchInfo={getSearchData?.searchInformation} />
 
       <WebSearchItems items={getSearchData.items} />
