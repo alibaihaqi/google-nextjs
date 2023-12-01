@@ -8,6 +8,7 @@ export interface ISearchItem {
   kind: string;
   link: string;
   pagemap: any;
+  snippet: string;
   title: string;
 }
 
