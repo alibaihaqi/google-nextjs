@@ -37,6 +37,7 @@ export default function HomeSearch() {
   return (
     <>
       <form
+        autoComplete={'off'}
         className={'s-form-search'}
         onSubmit={(event: ChangeEvent<HTMLFormElement>) => onSubmitFormHandler(event)}
       >
