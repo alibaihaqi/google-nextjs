@@ -8,7 +8,7 @@ export default async function Home() {
   const response = await getIpData()
 
   return (
-    <main className='flex flex-col'>
+    <main className='flex flex-col min-h-[100svh]'>
       <HomeHeader />
       <HomeContent />
       <Footer data={response} />

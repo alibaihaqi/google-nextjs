@@ -5,7 +5,7 @@ import { GOOGLE_LOGO } from '@/constants/logo'
 
 export default function HomeContent() {
   return (
-    <section className='flex flex-1 flex-col items-center mt-32 pb-32'>
+    <section className='flex flex-1 flex-col items-center my-32'>
       <Image
         alt={GOOGLE_LOGO.alt}
         src={GOOGLE_LOGO.url}
