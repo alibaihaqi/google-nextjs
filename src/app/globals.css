@@ -51,7 +51,7 @@ body {
   }
 
   .s-pagination-button {
-    @apply flex items-center space-x-2 hover:underline;
+    @apply flex items-center space-x-2 hover:underline hover:text-blue-700;
   }
 
   .s-header-search-box {
