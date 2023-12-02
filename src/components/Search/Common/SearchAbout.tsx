@@ -1,14 +1,4 @@
-
-interface ISearchInfo {
-  searchTime: number;
-  formattedSearchTime: string;
-  totalResults: string;
-  formattedTotalResults: string
-}
-
-interface IWebSearchAboutProps {
-  searchInfo: ISearchInfo
-}
+import { IWebSearchAboutProps } from "@/interfaces/google/search"
 
 export default function WebSearchAbout({ searchInfo }: IWebSearchAboutProps) {
   const renderSearchInfo = () => {
