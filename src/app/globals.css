@@ -49,4 +49,15 @@ body {
   .s-spinner {
     fill: var(--foreground-rgb);
   }
+
+  .s-pagination-button {
+    @apply flex items-center space-x-2 hover:underline;
+  }
+
+  .s-header-search-box {
+    @apply flex items-center border border-gray-200
+    focus-within:bg-[var(--s-button-hex)] rounded-full
+    shadow-lg hover:bg-[var(--s-button-hex)] px-6 py-2
+    ml-4 mr-5 max-w-3xl hover:shadow-md transition-shadow;
+  }
 }

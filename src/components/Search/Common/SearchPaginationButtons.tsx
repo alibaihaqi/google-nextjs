@@ -17,7 +17,7 @@ export default function SearchPaginationButtons({ queries }: any) {
     return (
       <Link
         href={`${pathname}?searchTerm=${term}&start=${queries?.previousPage[0].startIndex}`}
-        className='flex items-center space-x-2'
+        className='s-pagination-button'
       >
         <BsChevronLeft />
         <p>Previous</p>
@@ -31,7 +31,7 @@ export default function SearchPaginationButtons({ queries }: any) {
 
       <Link
         href={`${pathname}?searchTerm=${term}&start=${queries?.nextPage[0].startIndex}`}
-        className='flex items-center space-x-2'
+        className='s-pagination-button'
       >
         <p>Next</p>
         <BsChevronRight />

@@ -30,11 +30,7 @@ export default function HeaderSearchBox() {
 
   return (
     <form
-      className={`
-        flex items-center border border-gray-200
-        rounded-full shadow-lg px-6 py-2 ml-4 mr-5
-        max-w-3xl
-      `}
+      className={'s-header-search-box'}
       onSubmit={onSubmitHandler}
     >
       <input
