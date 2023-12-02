@@ -1,6 +1,7 @@
 export interface ISearchRequest {
   query: string;
   isSearchImage?: boolean;
+  start?: number,
 }
 
 export interface ISearchInfo {
