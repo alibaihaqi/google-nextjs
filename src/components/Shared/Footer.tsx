@@ -1,18 +1,22 @@
+'use client'
+
+import { useQuery } from '@tanstack/react-query'
+
 import { FOOTER_LIST } from '@/constants/footer'
+import { GetClientCountryApi } from '@/services/location';
 
-interface IFooterProps {
-  data: any;
-}
-
-export default function Footer({ data }: IFooterProps) {
-  const countryName = data.success ? data.location?.countryName : 'Country'
+export default function Footer() {
+  const { isLoading, data } = useQuery({
+    queryKey: ['country'],
+    queryFn: GetClientCountryApi,
+  })
 
   return (
     <footer
       className={'s-footer'}
     >
       <p className='px-8 py-3 border-b border-[#3c4043]'>
-        { countryName }
+        { isLoading || !data?.country ? 'Country' : data?.country }
       </p>
 
       <div

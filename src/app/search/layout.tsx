@@ -4,7 +4,6 @@ import '../globals.css'
 
 import HeaderSearch from '@/components/HeaderSearch'
 import Footer from '@/components/Shared/Footer'
-import { getIpData } from '@/services/location'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,13 +17,11 @@ export default async function SearchLayout({
 }: {
   children: React.ReactNode
 }) {
-  const response = await getIpData()
-
   return (
     <main className='flex flex-col min-h-[100svh]'>
       <HeaderSearch />
       { children }
-      <Footer data={response} />
+      <Footer />
     </main>
   )
 }
